@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula01- Variaveis e tipos primitivos</title>
+</head>
+<body>
+    <script> // Usando somente Number o javascript interpreta o tipo de número(float, int).
+        
+        var n1 = Number(prompt('Digite um número:')) // Number, o "n" deve ser em maiúscula
+        var n2 = Number(prompt('Digite outro número')) // Number, o "n" deve ser em maiúscula 
+        var soma = n1 + n2 // "+" Em uma string tem a função de concatenação. Em um número tem função de soma.
+        alert('A soma dos números é ' + soma)
+        
+        // Convertendo número para string.
+        
+        alert('A soma dos números é ' + soma.toString()) // Uma forma. .toString, o "s" deve ser em maiúscula.
+        alert('A soma dos números é ' + String(soma)) // Outra forma. String, o "s" deve ser em maiúscula.
+
+        // Template Strings: Serve para concatenar variáveis de forma mais prática e rápida.
+
+        alert(`A soma entre ${n1} e ${n2} é igual a ${soma}`)
+
+        // Formatando Strings
+    
+        var s = 'JavaScript'
+        
+    </script>
+</body>
+</html>

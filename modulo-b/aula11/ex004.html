@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>País de origem!!</title>
+</head>
+<body>
+
+    <h1>Controle de gringos</h1>
+    Pais onde vive: <input type="text" name="pais" id="pais">
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="res">
+
+    </div>
+
+    <script>
+    
+        function verificar() {
+            var pais = window.document.querySelector('#pais').value // ".value" pega o valor digitado no input
+            //var pegar = pais.value
+            var res = window.document.querySelector('#res')
+            if (pais == 'Brasil') {
+            res.innerHTML = `O país que tu mora é <strong>${pais}</strong>, tu é brasileiro`
+        } else {
+            res.innerHTML = `O pais que tu mora é <strong>${pais}</strong>, tu é estrangeiro.`
+        }
+
+        }
+
+        
+    </script>
+    
+</body>
+</html>

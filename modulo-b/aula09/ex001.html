@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        body{
+            background-color: rgb(41, 1, 41);
+            color: greenyellow;
+            font: normal 15pt arial;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Iniciando estudos com DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar <strong>DOM</strong> em JavaScript!</p>
+    <div id="msg">Clique em mim</div>
+    <div name="msg2">Clique aqui também</div>
+    <div class="msg3">Classe</div>
+    <div id="msg4">Seletor</div>
+    <div class="msg5">Seletor</div>
+    <script>
+        /*Escrevendo  no documento uma string*/window.document.write('Olá mundo, <br>')
+        /*Escrevendo no documento o elemento entre ()*/window.document.write(window.document.charset,'<br>')
+        
+        /*Selecionando elemento por marca/tag*/
+        var p1 = window.document.getElementsByTagName('p')[0]
+        window.document.write('Está escrito assim: ' + p1.innerText) //inner.Text Adiciona somento o texto; inner.HTML adiciona toda a formatação da tag
+        p1.style.color = 'red'
+        var corpo = window.document.body
+        //corpo.style.background = 'green' 
+        
+        /*Selecionando elemento por ID/class*/
+        var div = window.document.getElementById('msg')
+        div.style.background = 'black'
+        //div.innerText ='Estou aguardando...' Troca o texto original da div, através da sua id
+        //window.document.getElementById('msg').innerText = 'olá' Troca diretamente o texto da id sem usar uma variável como no exemplo anterior.
+
+        /*Selecionando elemento por nome*/
+        var div2 = window.document.getElementsByName('msg2')[0]
+        div2.innerText = 'Alterando o texto da Div pelo "name".'
+
+        /*Selecioandno elemento por classe*/
+        var div3 = window.document.getElementsByClassName('msg3')[0]
+        div3.innerText = 'Alterando o texto da Div pela "class".'
+
+        /*Selecionando elemento por seletor*/
+        var div4 = window.document.querySelector('div#msg4') // Quando for id usar '#' antes de botar o nome da id.
+        div4.innerText = 'Alterando o texto da Div pelo "id".'
+        div4.style.background = 'brown'
+
+        var div5 = window.document.querySelector('div.msg5') // Quando for class usar '.' antes de botar o nome da classe.
+        div5.innerText = 'Alterando o texto da div pela "class".'
+        div5.style.color = 'aqua'
+   </script>
+    
+</body>
+</html>
