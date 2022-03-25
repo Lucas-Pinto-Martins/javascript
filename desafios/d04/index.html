@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de troco</title>
+    <style>
+        input{
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculando o troco!</h1>
+
+    <div>
+        <input id="btn1" type="button" value="Comprar produto" onclick="calcular()">
+    </div>
+    
+    <script>
+        
+
+        function calcular(){
+            let produto = prompt('Que produto você está comprando?')
+            let valor_produto = window.Number(prompt(`Quanto custa ${produto} que você está comprando?`))
+            let valor_recebido = window.Number(prompt(`Qual foi o valor que você deu para pagar ${produto}?`))
+            let troco = valor_recebido - valor_produto
+            if (valor_recebido < valor_produto) {
+                window.alert(`Você não tem dinheiro suficiente para comprar ${produto}. Vai trabalhar vagabundo.` )
+            } else{
+                let msg_final = window.alert(`            Você comprou ${produto} que custou ${valor_produto}€.
+            Deu ${valor_recebido}€ e vai receber ${troco}€.
+            Volte Sempre! `)
+            }
+        }
+
+    </script>
+</body>
+</html>
