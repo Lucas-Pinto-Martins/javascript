@@ -27,10 +27,11 @@
             let valor_recebido = window.Number(prompt(`Qual foi o valor que você deu para pagar ${produto}?`))
             let troco = valor_recebido - valor_produto
             if (valor_recebido < valor_produto) {
-                window.alert(`Você não tem dinheiro suficiente para comprar ${produto}. Vai trabalhar vagabundo.` )
+                window.alert(`Você não tem dinheiro suficiente para comprar ${produto}.`)
+                window.alert('Vai trabalhar vagabundo.')
             } else{
                 let msg_final = window.alert(`            Você comprou ${produto} que custou ${valor_produto}€.
-            Deu ${valor_recebido}€ e vai receber ${troco}€.
+            Deu ${valor_recebido}€ e vai receber ${troco}€ de troco.
             Volte Sempre! `)
             }
         }
