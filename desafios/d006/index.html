@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de temperaturas</title>
+    <style>
+        input{
+            padding: 15px;
+        }
+
+        p{
+            font-size: 1.2em;
+            line-height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor de temperaturas!</h1>
+
+    <div>
+        <input id="btn1" type="button" value="Converter" onclick="converter()">
+        <p id="resultado">Clique no botão acima para iniciar.</p>
+    </div>
+    
+    <script>
+        
+
+        function converter(){
+            let graus_celcius = window.Number(prompt('Digite uma temperatura em ºC(Celcius):'))
+            let el_resultado = document.getElementById('resultado')
+            el_resultado.innerHTML = `<h1>A temperatura de ${graus_celcius}ºC, corresponde a...</h1> `
+            el_resultado.innerHTML += `${(graus_celcius + 273.15).toFixed(2)}ºK (Kelvin)<br>`
+            el_resultado.innerHTML += `${(graus_celcius * 1.8 + 32).toFixed(2)}ºF (Fahrenheit)`
+        }
+
+    </script>
+</body>
+</html>
