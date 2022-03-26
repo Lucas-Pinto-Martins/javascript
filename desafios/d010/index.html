@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Bhaskara</title>
+    <style>
+        input{
+            padding: 15px;
+        }
+
+        p{
+            font-size: 1.2em;
+            line-height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Resolvendo Bhaskara!</h1>
+
+    <div>
+        <input id="btn1" type="button" value="calcular" onclick="bhaskara()">
+        <p id="resultado">Considerando uma equação no formato <strong>a</strong>x<sup>2</sup> + <strong>b</strong>x + <strong>c</strong> = 0, aperte o botão acima para calcular o valor de 🛆. </p>
+    </div>
+    
+    <script>
+        
+
+        function bhaskara(){
+            let slave = window.prompt('Qual o nome do escravo?')
+            let salario = window.Number(prompt(`Qual é o salário de ${slave}?`))
+            let reajuste = window.Number(prompt(`O salário de ${slave} vai ser reajustado em qual porcentagem?`))
+            let aumento = (salario / 100 * reajuste)
+            aumento.toFixed(2)
+            let new_salario = (salario + aumento).toFixed(2)
+            let el_resultado = document.getElementById('resultado')
+            el_resultado.innerHTML = `<h1>${slave} recebeu um aumento salarial!</h1>`
+            el_resultado.innerHTML += `O salário atual é de ${salario}€.<br>`
+            el_resultado.innerHTML += `Com o aumento de ${reajuste}%, o salário vai aumentar ${aumento}€ no próximo mês.<br>`
+            el_resultado.innerHTML += `E a partir dai, ${slave} vai passar a ganhar ${new_salario}€.`
+        }
+        
+    </script>
+</body>
+</html>

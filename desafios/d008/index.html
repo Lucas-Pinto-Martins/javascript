@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio desconto de 10%</title>
+    <style>
+        input{
+            padding: 15px;
+        }
+
+        p{
+            font-size: 1.2em;
+            line-height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calcular Desconto</h1>
+
+    <div>
+        <input id="btn1" type="button" value="Desconto de 10%" onclick="desconto()">
+        <p id="resultado">Clique no botão acima para iniciar.</p>
+    </div>
+    
+    <script>
+        
+
+        function desconto(){
+            let produto = window.prompt('Qual produto você está comprando?')
+            let preco = window.Number(prompt(`Qual é o preço de ${produto}?`))
+            let desconto = (preco / 10).toFixed(2)
+            let el_resultado = document.getElementById('resultado')
+            el_resultado.innerHTML = `<h1>Calculando desconto de 10% para ${produto}...</h1>`
+            el_resultado.innerHTML += `O preço original era ${preco}€.<br>`
+            el_resultado.innerHTML += `Você acaba de ganhar ${desconto}€ de desconto (-10%).<br>`
+            el_resultado.innerHTML += `No fim, você vai pagar ${(preco - desconto).toFixed(2)}€ no produto ${produto}. Parabéns pela aquisição.<br> Volte sempre!`
+        }
+    </script>
+</body>
+</html>
