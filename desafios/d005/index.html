@@ -9,6 +9,11 @@
         input{
             padding: 15px;
         }
+
+        p{
+            font-size: 1.2em;
+            line-height: 40px;
+        }
     </style>
 </head>
 <body>
@@ -26,7 +31,12 @@
             let medida_metros = window.Number(prompt('Digite uma distância em metros (m):'))
             let el_resultado = document.getElementById('resultado')
             el_resultado.innerHTML = `<h1>A distância de ${medida_metros} metros, corresponde a...</h1> `
-            el_resultado.innerHTML += ' '
+            el_resultado.innerHTML += `${medida_metros / 1000} quilômetros(Km)<br>`
+            el_resultado.innerHTML += `${medida_metros / 100} hectômetros(Hm)<br>`
+            el_resultado.innerHTML += `${medida_metros / 10} decâmetros(Dam)<br>`
+            el_resultado.innerHTML += `${medida_metros * 10} decímetros(dm)<br>`
+            el_resultado.innerHTML += `${medida_metros * 100} centimetros(cm)<br>`
+            el_resultado.innerHTML += `${medida_metros * 1000} milímetros(mm)`
         }
 
     </script>
