@@ -14,6 +14,10 @@
             font-size: 1.2em;
             line-height: 40px;
         }
+
+        span{
+            background-color: yellow;
+        }
     </style>
 </head>
 <body>
@@ -28,17 +32,15 @@
         
 
         function bhaskara(){
-            let slave = window.prompt('Qual o nome do escravo?')
-            let salario = window.Number(prompt(`Qual é o salário de ${slave}?`))
-            let reajuste = window.Number(prompt(`O salário de ${slave} vai ser reajustado em qual porcentagem?`))
-            let aumento = (salario / 100 * reajuste)
-            aumento.toFixed(2)
-            let new_salario = (salario + aumento).toFixed(2)
+            let a = window.Number(prompt('Qual é o valor de a?'))
+            let b = window.Number(prompt(`Qual é o valor de b?`))
+            let c = window.Number(prompt(`Qual é o valor de c?`))
+
             let el_resultado = document.getElementById('resultado')
-            el_resultado.innerHTML = `<h1>${slave} recebeu um aumento salarial!</h1>`
-            el_resultado.innerHTML += `O salário atual é de ${salario}€.<br>`
-            el_resultado.innerHTML += `Com o aumento de ${reajuste}%, o salário vai aumentar ${aumento}€ no próximo mês.<br>`
-            el_resultado.innerHTML += `E a partir dai, ${slave} vai passar a ganhar ${new_salario}€.`
+            el_resultado.innerHTML = `<h1>Resolvendo Bhaskara</h1>`
+            el_resultado.innerHTML += `A equação atual é <strong>${a}x<sup>2</sup> + ${b}x + ${c} = 0</strong>.<br>`
+            el_resultado.innerHTML += `O calculo realizado será <strong>🛆 = ${b}<sup>2</sup> -4 . ${a} . ${c} </strong><br>`
+            el_resultado.innerHTML += `O valor calculado foi <span><strong>🛆 = ${b * b -4 * a * c}</strong></span>`
         }
         
     </script>
