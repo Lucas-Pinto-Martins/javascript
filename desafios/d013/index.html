@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculando média escolar</title>
+    <style>
+        input{
+            padding: 15px;
+        }
+
+        p{
+            font-size: 1.2em;
+            line-height: 40px;
+        }
+
+        span.pas{
+            font-weight: bold;
+            background-color: rgba(0, 180, 0, 0.52);
+            text-transform: uppercase;
+            color: green;
+        }
+
+        span.rep{
+            font-weight: bold;
+            background-color: rgba(255, 68, 68, 0.582);
+            text-transform: uppercase;
+            color: rgb(149, 0, 0);
+        }
+
+        span.rec{
+            font-weight:bold;
+            background-color: rgba(207, 207, 0, 0.609);
+            text-transform: uppercase;
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <h1>Situação do aluno!</h1>
+
+    <div>
+        <input id="btn1" type="button" value="Entrar com as notas" onclick="verificar()">
+        <p id="resultado">Clique no botão acima para informar as notas do aluno.</p>
+    </div>
+    
+    <script>
+        
+
+        function verificar(){
+            let aluno = window.prompt('Qual é o nome do aluno?')
+            let nota1 = window.Number(prompt(`Qual é a primeira nota de ${aluno}?`))
+            let nota2 = window.Number(prompt(`Qual é a segunda nota de ${aluno}?`))
+            let media = ((nota1 + nota2) / 2)
+
+            let el_resultado = document.getElementById('resultado')
+            el_resultado.innerHTML = `<h1>Analizando a situação de ${aluno}</h1>`
+            el_resultado.innerHTML += `Com as notas ${nota1} e ${nota2}, a <strong>média é ${media}</strong>.<br>`
+
+            if (media < 3) {
+                el_resultado.innerHTML += `Com média abaixo de 3,0, o aluno está <span class="rep">Reprovado</span>`
+            } else if (media < 6) {
+                el_resultado.innerHTML += `Com média entre 3,0 e 6,0, o aluno está em <span class="rec">Recuperação</span>`
+            } else{
+                el_resultado.innerHTML += `Com média acima de 6,0, o aluno está <span class="pas">Aprovado</span>`
+            }
+        }
+        
+    </script>
+</body>
+</html>
