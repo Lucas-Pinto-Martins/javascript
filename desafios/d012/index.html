@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preço antes e depois</title>
+    <style>
+        input{
+            padding: 15px;
+        }
+
+        p{
+            font-size: 1.2em;
+            line-height: 40px;
+        }
+
+        span.bi{
+            font-weight: bold;
+            background-color: rgba(0, 180, 0, 0.52);
+            text-transform: uppercase;
+            color: green;
+        }
+
+        span.nao_bi{
+            font-weight: bold;
+            background-color: rgba(255, 68, 68, 0.582);
+            text-transform: uppercase;
+            color: rgb(149, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <h1>Preço mudou!</h1>
+
+    <div>
+        <input id="btn1" type="button" value="verificar" onclick="verificar()">
+        <p id="resultado">Clique no botão acima para analisar a mudança de preço.</p>
+    </div>
+    
+    <script>
+        
+
+        function verificar(){
+            let preco_inicial = window.Number(prompt('Qual era o preço anterior do produto?'))
+            let preco_atual = window.Number(prompt('Qual é o preço atual do produto?'))
+            let reajuste = (preco_inicial / 100).toFixed(2)
+
+            let el_resultado = document.getElementById('resultado')
+            el_resultado.innerHTML = `<h1>Analizando os valores informados</h1>`
+            el_resultado.innerHTML += `O produto custava ${preco_inicial.toFixed(2)}€, e agora custa ${preco_atual.toFixed(2)}€.<br>`
+
+            if (preco_inicial < preco_atual){
+                el_resultado.innerHTML += 'Hoje o produto está mais caro.<br>'
+                el_resultado.innerHTML += `O preço subiu ${(preco_atual - preco_inicial).toFixed(2)}€ em relação ao preço anterior.<br>`
+                el_resultado.innerHTML += `Uma variação de ${((preco_atual - preco_inicial) / reajuste).toFixed(2)}% para cima.`
+            } else {
+                el_resultado.innerHTML += 'Hoje o produto está mais barato.<br>'
+                el_resultado.innerHTML += `O preço caiu ${(preco_inicial - preco_atual).toFixed(2)}€ em relação ao preço anterior.<br>`
+                el_resultado.innerHTML += `Uma variação de ${((preco_inicial - preco_atual) / reajuste).toFixed(2)}% para baixo.`
+            }
+        }
+        
+    </script>
+</body>
+</html>
